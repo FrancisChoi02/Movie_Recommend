@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+langchain==0.0.352
+langchain_community==0.0.17
+openai==1.11.0
+pandas
+openpyxl
+python-dotenv
+chromadb
+tiktoken
+httpx
+numexpr
+Jinja2
+xlsxwriter
+scikit-learn
