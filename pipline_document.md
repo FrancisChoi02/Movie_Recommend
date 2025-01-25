@@ -1,38 +1,31 @@
-### **Data Preprocessing**
+## 概述
 
-This module is responsible for:
+论文作者提出了RAGAS（**R** etrieval **A** ugmented **G** eneration **As** sessment），一个无需人工标注的自动化评估检索增强生成系统的框架，用于评估RAG系统的多个维度，包括检索系统的能力、生成模块的忠实性以及生成内容的质量。
 
-1. Importing data from the data source (CSV) into the database (SQLite).
-2. Cleaning the data in the database into an agreed-upon format, removing erroneous data, and preparing it for matrix construction.
+## 论文核心
 
-### **Matrix Data Processing Module**
+作者通过引入忠实性、答案相关性和上下文相关性三个评估维度，使得RAGAs能够在无需人工标注的情况下快速评估RAG系统的表现
 
-This module is responsible for:
+### 评估纬度
 
-1. **Building the Task Map (Classification)**:
-    - Classifying tasks into predefined categories.
-2. **Building Inverted Dictionaries**:
-    - **user_item_dict**: Stores users' task completion data as vectors (e.g., user: [1, 0, 1, 2, 1, 3]).
-    - **item_user_dict**: Tracks which users have completed specific tasks.
-3. **Constructing Matrices**:
-    - **user_task_vectorized_matrix**:
-        - Records each user's score for every task.
-        - Initial scores are based on the number of times a user has completed a particular type of task (e.g., user 1: {‘task 1’: 1}, {‘task 2’: 0}, {‘task 3’: 0}, {‘task 4’: 2}, {‘task 5’: 0}).
-    - **maker_similarity_matrix**:
-        - Vectorizes each user's task data using **user_item_dict** and calculates user similarity through cosine similarity, constructing a similarity matrix.
-4. **Reading and Writing Matrix Data**:
-    - Handles the storage and retrieval of matrix data.
+忠实性（Faithfulness）、答案相关性（Answer Relevance）和上下文相关性（Context Relevance）：
 
-### **User Collaborative Filtering**
+- **忠实性**：生成的答案是否基于给定的上下文，避免幻觉。
+- **答案相关性**：生成的答案是否直接回答了问题。
+- **上下文相关性**：检索的上下文是否聚焦于问题，避免冗余信息。
 
-This module is responsible for:
+### 评估方法（基于不同纬度）
 
-1. Updating the **user_task_vectorized_matrix** based on user-to-user similarity. Scores for tasks are updated using collaborative filtering (e.g., user 1: {‘task 1’: 1}, {‘task 2’: 1.22}, {‘task 3’: 0.98}, {‘task 4’: 4}, {‘task 5’: 3}).
-2. Processing test dataset data to validate the effectiveness of the algorithm.
+- **忠实性**：通过LLM提取生成答案中的陈述，并验证这些陈述是否可以从上下文中推断出来。
+- **答案相关性**：通过LLM生成多个潜在问题，并计算这些问题与原始问题的相似度。
+- **上下文相关性**：通过LLM提取上下文中与问题相关的句子，并计算这些句子占上下文总句子的比例。
 
-### **Recommendation**
+虽然论文里，作者只提了三个指标，但在RAGAS的官方文档中，其实是有更多维度的指标：
 
-This module is responsible for:
-
-1. Recommending the most suitable and available candidate for a specific task.
-2. Executing scheduled tasks to trigger **User Collaborative Filtering** updates based on new task data, ensuring up-to-date recommendation results.
+- Faithfulness（忠实度）
+- Answer relevancy（答案相关性）
+- Context recall（上下文召回率）
+- Context precision（上下文精确度）
+- Context utilization（上下文利用度）
+- Context entity recall（上下文实体召回率）
+- Summarization Score（摘要得分）
