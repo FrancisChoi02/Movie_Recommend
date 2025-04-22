@@ -27,3 +27,13 @@
 | ​**Agent+RAG**    | 1. 支持复杂任务分解执行<br>2. 多智能体实现交互决策<br>3. 引入外部工具使用的能力      | 1. 系统架构复杂度高<br>2. 需要设计有效的Agent决策机制<br>3. 高响应延迟              | 多步骤问题求解以及需要调用外部API的场景（如YoY数据计算）                             |
 | ​**KG+RAG**       | 1. 语义关联检索，消除关键词歧义<br>2. 根据结构化属性提供权威答案<br>3. 支持多跳推理能力 | 1. 知识图谱构建成本高<br>2. 领域迁移能力有限<br>3. 需持续维护知识图谱                 | 企业/行业可视化分析<br>实体信息精准映射<br>事件溯源和数据检索                          |
 | ​**Agent+KG+RAG** | 1. Agent决策+KG推理+动态检索<br>2. 支持复杂认知任务<br>3. 提供可溯源的高解释性回答     | 1. 响应时间长<br>2. 技术复杂度高<br>3. 系统调试难度大                              | 1. 企业战略规划决策系统<br>2. 企业宏观分析报告<br>3. 金融风控分析（如借贷风险评估）           |
+
+
+
+
+| ​**Solution**       | ​**Core Advantages**                                                     | ​**Limitations**                                                      | ​**Typical Use Cases**                                                                 |
+|--------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| ​**RAG**            | 1. Retrieval-augmented generation<br>2. Real-time knowledge updates     | 1. Retrieval quality depends on KB coverage<br>2. Potential output drift in long texts | Internal knowledge-based Q&A systems                                                 |
+| ​**Agent+RAG**      | 1. Complex task decomposition<br>2. Multi-agent collaboration<br>3. External tool integration | 1. High system complexity<br>2. Requires robust agent logic<br>3. Latency issues | Multi-step problem solving (e.g., YoY calculations with API calls)                   |
+| ​**KG+RAG**         | 1. Semantic disambiguation<br>2. Structured authoritative answers<br>3. Multi-hop reasoning | 1. High KG construction cost<br>2. Domain-specific<br>3. Requires ongoing KG maintenance | Enterprise/industry visualization<br>Entity mapping<br>Event溯源 (provenance tracing) |
+| ​**Agent+KG+RAG**   | 1. Agent decision-making + KG reasoning<br>2. Complex cognitive tasks<br>3. Explainable, traceable outputs | 1. Slow response<br>2. High technical complexity<br>3. Difficult debugging | 1. Strategic planning systems<br>2. Enterprise analysis reports<br>3. Financial risk assessment (e.g., loan underwriting) |
