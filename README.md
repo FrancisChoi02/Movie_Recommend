@@ -1,91 +1,275 @@
-<mxfile host="65bd71144e">
-    <diagram id="FDWRjHvNoRd4PtRVeOhn" name="实时聊天应用架构">
-        <mxGraphModel dx="823" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="实时聊天应用架构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
-                    <mxGeometry x="360" y="20" width="200" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="React Frontend" style="swimlane;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="100" width="220" height="520" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="50" y="120" width="200" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="5" value="ChatRoom Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="70" y="160" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="MessageList Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="70" y="210" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="7" value="UserAuth Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="70" y="260" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="8" value="InputBox Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="70" y="310" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="9" value="Socket.io" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
-                    <mxGeometry x="50" y="370" width="200" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" value="WebSocket" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="120" y="410" width="60" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="11" value="Node.js Backend" style="swimlane;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-                    <mxGeometry x="300" y="100" width="220" height="520" as="geometry"/>
-                </mxCell>
-                <mxCell id="12" value="API Endpoints" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="310" y="120" width="200" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="13" value="POST /api/auth/register" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="330" y="160" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" value="POST /api/auth/login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="330" y="210" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="15" value="GET /api/rooms" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="330" y="260" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="16" value="POST /api/messages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="330" y="310" width="160" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="Express Server" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="380" width="120" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="18" value="MongoDB Driver" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="470" width="120" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="19" value="MongoDB" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
-                    <mxGeometry x="560" y="100" width="220" height="520" as="geometry"/>
-                </mxCell>
-                <mxCell id="20" value="Collections" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="570" y="120" width="200" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="21" value="Users Collection { id, username, email, password }" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="590" y="160" width="160" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" value="Messages Collection { id, roomId, userId, content, time }" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="590" y="240" width="160" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="23" value="Rooms Collection { id, name, members[], created }" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-                    <mxGeometry x="590" y="320" width="160" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" value="Mongoose ODM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="420" width="120" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="10" target="17">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="400" y="430" as="sourcePoint"/>
-                        <mxPoint x="450" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="18" target="24">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="520" y="485" as="sourcePoint"/>
-                        <mxPoint x="610" y="435" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-</mxfile>
+# ============================================================
+# Unified CICD Pipeline – pp-openai-monitor-dashboard
+# ============================================================
+# Supports: CI only, CD only, or full CICD
+# Environments: dev, poc, nonprod, prod
+#
+# PROD deployments require a Change Request (CR) number.
+# To add manual approval gates for PROD, configure an
+# "Environment" with checks in Azure DevOps → Pipelines → Environments.
+# ============================================================
+
+trigger: none
+pr: none
+
+name: 'CICD-$(Build.BuildId)-${{ parameters.appVersion }}'
+
+# ──────────────────────────────────────────────
+# Parameters
+# ──────────────────────────────────────────────
+parameters:
+  # ── Mode Selection ──
+  - name: pipelineMode
+    displayName: 'Pipeline Mode'
+    type: string
+    default: CICD
+    values:
+      - CI
+      - CD
+      - CICD
+
+  # ── Target Environment ──
+  - name: targetEnv
+    displayName: 'Target Environment'
+    type: string
+    default: nonprod
+    values:
+      - dev
+      - poc
+      - nonprod
+      - prod
+
+  # ── CI Parameters ──
+  - name: appName
+    displayName: 'Application Name'
+    type: string
+    default: pp-openai-monitor-dashboard
+
+  - name: appVersion
+    displayName: 'Application Version'
+    type: string
+    default: 0.1.8_1
+
+  - name: groupId
+    displayName: 'Maven Group ID'
+    type: string
+    default: com.BAG.wsit.rgl.powerplatform.artifacts.genai
+
+  - name: github_branch
+    displayName: 'Git Branch (CI stage only)'
+    type: string
+    default: gpt_4_1_test
+
+  # ── CD Parameters ──
+  - name: pkg_DIPDIVE_url
+    displayName: 'DIPDIVE Package URL (required for CD-only mode; leave empty for CICD)'
+    type: string
+    default: ''
+
+  - name: co_number
+    displayName: 'Change Request Number (required for PROD deployment)'
+    type: string
+    default: ''
+
+# ──────────────────────────────────────────────
+# Variables
+# ──────────────────────────────────────────────
+variables:
+  # Common
+  - group: DIPDIVE-service-account
+  - name: packageName
+    value: '${{ parameters.appName }}-${{ parameters.appVersion }}.zip'
+  - name: DIPDIVE_url
+    value: https://DIPDIVE304.systems.uk.BAG:8081/DIPDIVE/repository/maven-BAG-internal-dev_n3p
+
+  # ── Environment-specific mappings ──
+  # dev (update webappName / webappResourceGroup to actual values)
+  - ${{ if eq(parameters.targetEnv, 'dev') }}:
+    - name: agentPool
+      value: BAG-multi-wcs-nonprod-01
+    - name: azureServiceConnection
+      value: OPENSEA-nonprod-01
+    - name: webappName
+      value: OPENSEA-nonprod-use-monitor-dashboard-dev
+    - name: webappResourceGroup
+      value: OPENSEA-nonprod-use-monitor-dashboard-dev
+
+  # poc (update webappName / webappResourceGroup to actual values)
+  - ${{ if eq(parameters.targetEnv, 'poc') }}:
+    - name: agentPool
+      value: BAG-multi-wcs-nonprod-01
+    - name: azureServiceConnection
+      value: OPENSEA-nonprod-01
+    - name: webappName
+      value: OPENSEA-nonprod-use-monitor-dashboard-poc
+    - name: webappResourceGroup
+      value: OPENSEA-nonprod-use-monitor-dashboard-poc
+
+  # nonprod / UAT
+  - ${{ if eq(parameters.targetEnv, 'nonprod') }}:
+    - name: agentPool
+      value: BAG-multi-wcs-nonprod-01
+    - name: azureServiceConnection
+      value: OPENSEA-nonprod-01
+    - name: webappName
+      value: OPENSEA-nonprod-use-monitor-dashboard-uat
+    - name: webappResourceGroup
+      value: OPENSEA-nonprod-use-monitor-dashboard-uat
+
+  # prod
+  - ${{ if eq(parameters.targetEnv, 'prod') }}:
+    - name: agentPool
+      value: OPENSEA-prod-01
+    - name: azureServiceConnection
+      value: azsvc-OPENSEA-prod-01-automation-01-managed
+    - name: webappName
+      value: OPENSEA-prod-use-monitor-dashboard-prod
+    - name: webappResourceGroup
+      value: OPENSEA-prod-use-monitor-dashboard-prod
+    - name: approvedCRNumber
+      value: ${{ parameters.co_number }}
+
+# ──────────────────────────────────────────────
+# Stages
+# ──────────────────────────────────────────────
+stages:
+
+  # ──────────────────────────────────────────
+  # CI – Build & Publish to DIPDIVE
+  # ──────────────────────────────────────────
+  - ${{ if or(eq(parameters.pipelineMode, 'CI'), eq(parameters.pipelineMode, 'CICD')) }}:
+    - stage: CI
+      displayName: 'CI – Build & Publish'
+      jobs:
+        - job: BuildAndPublish
+          displayName: 'Build & Publish to DIPDIVE'
+          pool:
+            name: BAG-multi-wcs-nonprod-01   # CI always builds on nonprod pool
+          steps:
+            - checkout: self
+              persistCredentials: true
+
+            - script: |
+                set -euo pipefail
+                echo "=== CI: Building ${{ parameters.appName }} v${{ parameters.appVersion }} ==="
+                echo "Clone with branch ${{ parameters.github_branch }}"
+                git clone --single-branch \
+                  --branch "${{ parameters.github_branch }}" \
+                  "https://$(DIPDIVEusername):$(DIPDIVEpassword)@alm-github.systems.uk.BAG/cmb-regional-asp/pp-openai-monitor-dashboard.git"
+                ls
+                cd "pp-openai-monitor-dashboard"
+                python --version
+                python -m venv antenv
+                source antenv/bin/activate
+                export PIP_NO_INPUT=1
+                export PIP_DISABLE_PIP_VERSION_CHECK=1
+                pip install --upgrade pip setuptools
+                pip install -r requirements.txt
+              displayName: 'Set up Python environment and install requirements'
+              workingDirectory: $(System.DefaultWorkingDirectory)
+              env:
+                PIP_INDEX_URL: 'https://$(DIPDIVEusername):$(DIPDIVEpassword)@DIPDIVE302.systems.uk.BAG:8081/DIPDIVE/repository/pypi-group/simple'
+                PIP_NO_INPUT: '1'
+                PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+            - task: ArchiveFiles@2
+              displayName: 'Archive files'
+              inputs:
+                rootFolderOrFile: '$(System.DefaultWorkingDirectory)/pp-openai-monitor-dashboard'
+                includeRootFolder: false
+                archiveType: zip
+                archiveFile: $(packageName)
+                replaceExistingArchive: true
+
+            - script: |
+                echo "Pushing - artifactId=${{ parameters.appName }}, version=${{ parameters.appVersion }}, packageName=$(packageName)..."
+                curl -s -f --show-error --user $(DIPDIVEusername):$(DIPDIVEpassword) \
+                  -X POST 'https://DIPDIVE304.systems.uk.BAG:8081/DIPDIVE/service/rest/v1/components?repository=maven-BAG-internal-dev_n3p' \
+                  -F maven2.groupId=${{ parameters.groupId }} \
+                  -F maven2.artifactId=${{ parameters.appName }} \
+                  -F maven2.version=${{ parameters.appVersion }} \
+                  -F maven2.asset1=@$(packageName) \
+                  -F maven2.asset1.extension=zip
+              displayName: 'Push application package to DIPDIVE'
+              workingDirectory: $(System.DefaultWorkingDirectory)
+
+  # ──────────────────────────────────────────
+  # CD – Download & Deploy to target environment
+  # ──────────────────────────────────────────
+  - ${{ if or(eq(parameters.pipelineMode, 'CD'), eq(parameters.pipelineMode, 'CICD')) }}:
+    - stage: CD
+      displayName: 'CD – Deploy to ${{ parameters.targetEnv }}'
+      ${{ if eq(parameters.pipelineMode, 'CICD') }}:
+        dependsOn: CI
+      jobs:
+        - job: Deploy
+          displayName: 'Deploy to ${{ parameters.targetEnv }}'
+          pool:
+            name: $(agentPool)
+          steps:
+            - checkout: self
+              persistCredentials: true
+
+            # ── Validate required parameters ──
+            - script: |
+                if [ "${{ parameters.pipelineMode }}" = "CD" ] && [ -z "${{ parameters.pkg_DIPDIVE_url }}" ]; then
+                  echo "##vso[task.logissue type=error]pkg_DIPDIVE_url is required when running in CD-only mode."
+                  exit 1
+                fi
+              displayName: 'Validate Parameters'
+
+            # ── CR Verification (PROD only) ──
+            - ${{ if eq(parameters.targetEnv, 'prod') }}:
+              - script: |
+                  if [ -z "${{ parameters.co_number }}" ]; then
+                    echo "##vso[task.logissue type=error]Change Request (CR) number is REQUIRED for PROD deployment."
+                    echo "Please provide the co_number parameter and re-run the pipeline."
+                    exit 1
+                  fi
+                  echo "##vso[task.setvariable variable=approvedCRNumber]${{ parameters.co_number }}"
+                  echo "CR verification passed. Deploying to PROD with CR: ${{ parameters.co_number }}"
+                displayName: 'CR Verification'
+
+            # ── Download Package from DIPDIVE ──
+            - script: |
+                # Resolve package URL based on pipeline mode
+                if [ "${{ parameters.pipelineMode }}" = "CICD" ]; then
+                  # In CICD mode, construct URL from the package just published by CI
+                  DIPDIVEBaseUrl="$(DIPDIVE_url)"
+                  groupIdPath="${{ parameters.groupId }}"
+                  groupIdPath="${groupIdPath//.//}"
+                  pkgUrl="${DIPDIVEBaseUrl}/${groupIdPath}/${{ parameters.appName }}/${{ parameters.appVersion }}/${{ parameters.appName }}-${{ parameters.appVersion }}.zip"
+                else
+                  # In CD-only mode, use the user-provided URL
+                  pkgUrl="${{ parameters.pkg_DIPDIVE_url }}"
+                fi
+
+                echo "Download package from ${pkgUrl}"
+                curl -v --user $(DIPDIVEusername):$(DIPDIVEpassword) "${pkgUrl}" -o ${{ parameters.appName }}.zip
+
+                ls -l
+                maxsize=2000
+                filesize=$(stat -c%s "${{ parameters.appName }}.zip")
+                echo "Size of ${{ parameters.appName }}.zip = $filesize bytes."
+                if (( filesize < maxsize )); then
+                  echo "##vso[task.logissue type=error]Error downloading file. File too small or download failed. Exiting."
+                  exit 1
+                fi
+              displayName: 'Download Package from DIPDIVE'
+
+            # ── Deploy to Azure App Service ──
+            - task: AzureCLI@2
+              name: deploy_webapp_to_azure
+              displayName: 'Azure App Service Deploy: $(webappName)'
+              enabled: true
+              inputs:
+                azureSubscription: $(azureServiceConnection)
+                scriptType: bash
+                scriptLocation: inlineScript
+                addSpnToEnvironment: true
+                inlineScript: |
+                  ls -la
+                  az webapp deployment source config-zip \
+                    --resource-group $(webappResourceGroup) \
+                    --name $(webappName) \
+                    --src ./${{ parameters.appName }}.zip
